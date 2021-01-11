@@ -70,7 +70,14 @@
             <form class="form-group my-2 my-lg-0">
 
               <input type="text" class="form-control " placeholder="Search Listings" name="search" id="search">
+              
             </form>
+            <div class="d-flex justify-content-end pt-md-3">
+              <a href="#" class="search-close">
+                <span class="text-white ">X</span>
+              </a>
+              
+            </div>
           </div>
 
 
@@ -147,7 +154,7 @@
 
       /*! h1 Fades in page on load */
       $('h1').css('display', 'none');
-      $('h1').fadeIn(2000);
+      $('h1').fadeIn(1000);
 
       $(".search-toggle").click(function(){
       $(".search-container").removeClass("d-none");
@@ -155,6 +162,10 @@
       $("#search").focus(function(){
       $(".listing-section").removeClass("d-none");
       $("#overflow").removeClass("d-none");
+    });
+      // close search box
+      $(".search-close").click(function(){
+      $(".search-container").addClass("d-none");
     });
 
     });
