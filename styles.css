@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Oxygen', sans-serif;
+    overflow-x: hidden;
+
+}
+
+
+
+.hero-background {
+    position: relative;
+    height: 100vh;
+    background-image: url('designImg/liveshow_xl.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.header-background {
+    position: relative;
+    height: 100vh;
+    background-image: url('designImg/streetsaxXL.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;  
+}
+
+.header-overlay {
+    background-color: hsla(200, 70%, 50%, .1);
+    border-radius: .3em;
+}
+
+.background-overlay {
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.listing-background {
+    position: relative;
+    height: 100vh;
+    background-image: url('designImg/streetsaxXL.jpg');
+    background-size: cover;
+    background-position: center;
+   
+    z-index: 1;
+}
+.overflow-background {
+    position: relative;
+    height: 100vh;
+    background-image: url('designImg/jazzmuralXL.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    z-index: 1;
+}
+
+#listings {
+    z-index: 1000;
+}
+
+.hero-text {
+    position: absolute;
+    display: inline-block;
+    /* width: 90%; */
+    max-width: 1200px;
+    min-width: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);    
+}
+
+.main-text {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.btn-container {
+    height: 20vh;
+    
+}
+
+
+
+#search {
+  max-width: 1100px;
+  margin: 0 auto;  
+    
+}
+
+
+.hidden {
+    display:none;
+}
+
+@media only screen and (min-width: 360px) {
+    .main-text {
+        font-size: 3rem;
+    }
+    .hero-text {
+        transform: translate(-50%, -60%);
+    }
+
+}
+@media only screen and (min-width: 500px) {
+    .main-text {
+        font-size: 4rem;
+    }
+}
+@media only screen and (min-width: 700px) {
+    .main-text {
+        font-size: 5rem;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .main-text {
+        font-size: 6rem;
+    }
+}

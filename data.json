@@ -1,0 +1,45 @@
+[{
+    "name": "Ludwig Supraphonic",
+    "email": "urrynater@gmail.com",
+    "category": "percussion",
+    "brand": "Ludwig",
+    "model": "Supraphonic",
+    "condition": "excellent",
+    "year": "1976",
+    "location": "Manhattan",
+    "description": "Old snare drum",
+    "id": 1
+}, {
+    "name": "EVH 5150 III 50 watt combo amp",
+    "email": "urrynater@gmail.com",
+    "category": "amplifier",
+    "brand": "EVH ",
+    "model": "5150 III combo",
+    "condition": "excellent",
+    "year": "2016",
+    "location": "Brooklyn",
+    "description": "Awesome guitar amp!",
+    "id": 2
+}, {
+    "name": "Selmer Alto Saxophone",
+    "email": "urrynater@gmail.com",
+    "category": "woodwind",
+    "brand": "Selmer",
+    "model": "AS42 Alto Saxophone",
+    "condition": "new",
+    "year": "2021",
+    "location": "Manhattan",
+    "description": "Brand new saxophone",
+    "id": 3
+}, {
+    "name": "Korg Keyboard",
+    "email": "joe@hotmail.com",
+    "category": "keyboard",
+    "brand": "Korg",
+    "model": "MicroKorg",
+    "condition": "Good",
+    "year": "2008",
+    "location": "Queens",
+    "description": "With 37 keys and 128 user-rewritable programs, the Korg MicroKORG Synthesizer\/Vocoder is perfect for the musician looking for a serious yet affordable synthesizer. It provides powerful synthesis with the same dual-oscillator DSP synthesis engine found in the MS2000, and offers a wider selection of waveforms than most other modeled synths. It also has an 8-band vocoder with many advanced features, a full range of effects, and a flexible arpeggiator. 2 audio inputs let you process other instruments through it. Also serves as a compact MIDI controller. Comes with its own microphone.",
+    "id": 4
+}]
