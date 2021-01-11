@@ -7,10 +7,7 @@
 body {
     font-family: 'Oxygen', sans-serif;
     overflow-x: hidden;
-
 }
-
-
 
 .hero-background {
     position: relative;
@@ -51,7 +48,6 @@ body {
     background-image: url('designImg/streetsaxXL.jpg');
     background-size: cover;
     background-position: center;
-   
     z-index: 1;
 }
 .overflow-background {
@@ -60,7 +56,6 @@ body {
     background-image: url('designImg/jazzmuralXL.jpg');
     background-size: cover;
     background-position: center;
-    
     z-index: 1;
 }
 
@@ -71,7 +66,6 @@ body {
 .hero-text {
     position: absolute;
     display: inline-block;
-    /* width: 90%; */
     max-width: 1200px;
     min-width: 200px;
     top: 50%;

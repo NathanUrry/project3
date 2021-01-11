@@ -152,20 +152,26 @@
   <script>
     $(document).ready(function () {
 
-      /*! h1 Fades in page on load */
+      // h1 Fades in page on load 
       $('h1').css('display', 'none');
       $('h1').fadeIn(1000);
+      $('nav').css('display', 'none');
+      $('nav').fadeIn(1000);
 
       $(".search-toggle").click(function(){
-      $(".search-container").removeClass("d-none");
+      $(".search-container").toggleClass("d-none");
+      // toggle overflow
+      $(".listing-section").toggleClass("d-none");
+      $("#overflow").toggleClass("d-none");
     });
-      $("#search").focus(function(){
-      $(".listing-section").removeClass("d-none");
-      $("#overflow").removeClass("d-none");
-    });
+
+
       // close search box
       $(".search-close").click(function(){
-      $(".search-container").addClass("d-none");
+      $(".search-container").toggleClass("d-none");
+      // toggle overflow
+      $(".listing-section").toggleClass("d-none");
+      $("#overflow").toggleClass("d-none");
     });
 
     });
@@ -182,6 +188,7 @@
       else var searchField = null;
       var expression = new RegExp(searchField, "i");
 
+      // getJSON
       $.getJSON('data.json', function (data) {
         $.each(data, function (key, value) {
           if (value.name.search(expression) != -1 || value.category.search(expression) != -1 || value.brand
@@ -197,15 +204,7 @@
                 </li>
             `);
             $('#listings').append(
-            //   ` <li class="list-group-item ">
-            //       <img src="img/${value.id}.jpg" style="height:100px;width:100px;" class="img-thumbnail" /> 
-            //       ${value.name} | <span class="text-muted"> ${value.location} </span>
-            //       <span>Brand: ${value.brand}</span>
-            //       <span>Year: ${value.year}</span>
-            //       <span>Condition: ${value.condition}</span>
-            //       <a href="#listings" class="btn btn-light btn-sm ml-3 listing-btn">View Listing</a>
-            //     </li>
-            // `);
+           
                 `
                   <li class="list-group-item">
                     <div class="row">
@@ -230,6 +229,7 @@
 
       });
     });
+    // close search suggestion on click
     $('#result').on('click', 'li', function () {
       var click_text = $(this).text().split('|');
       $('#search').val($.trim(click_text[0]));
@@ -244,7 +244,3 @@
 
 
 
-<!-- {
-            $('#result').append(`<li class="list-group-item link-class"><img src="img/${value.id}.jpg" height="40" width="40" class="img-thumbnail" /> ${value.name} | <span class="text-muted"> ${value.location} </span><a href="aLink.html" style="width:100%;height:100%;display:block;">View Listing</a></li>`
-              );
-          } -->
