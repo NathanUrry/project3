@@ -41,10 +41,11 @@
             <div class="form-row">
               <div class="form-group col-sm-4">
                 <select name="category" class="form-control" id="exampleFormControlSelect1" required>
-                  <option value="">Category</option>
+                  <option value="" disabled selected>Category</option>
                   <option value="keyboard">Piano / Keyboards</option>
                   <option value="woodwind">Woodwind</option>
                   <option value="brass">Brass</option>
+                  <option value="string">String</option>
                   <option value="percussion">Percussion</option>
                   <option value="amplifier">Instrument Amplifier / Effects</option>
                   <option value="electronic">Electronic / Sampler</option>
@@ -64,13 +65,13 @@
             <div class="form-row">
                   <div class="form-group col-sm-4">
                     <select name="condition" class="form-control" id="exampleFormControlSelect1" required>
-                      <optgroup label="Condition">
+                        <option label="Condition" disabled selected></option>
                         <option value="New">New</option>
                         <option value="Excellent">Excellent</option>
                         <option value="Good">Good</option>
                         <option value="Poor">Poor</option>
                         <option value="Needs Repair">Needs Repair</option>
-                      </optgroup>
+                    
                     </select>
                   </div>
                   <div class="form-group col-sm-4">
@@ -78,6 +79,7 @@
                   </div>
                   <div class="form-group col-sm-4">
                       <select name="location" id="" class="form-control" required>
+                          <option value=""selected disabled>Borough</option>
                           <option value="Manhattan">Manhattan</option>
                           <option value="Brooklyn">Brooklyn</option>
                           <option value="Queens">Queens</option>

@@ -50,6 +50,9 @@ body {
     background-position: center;
     z-index: 1;
 }
+.listing-wrapper {
+    max-height: 100vh;
+}
 .overflow-background {
     position: relative;
     height: 100vh;
@@ -91,6 +94,8 @@ body {
   margin: 0 auto;  
     
 }
+
+
 
 
 .hidden {

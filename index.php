@@ -90,8 +90,8 @@
           </div>
 
           <!-- RESULTS -->
-          <div class="container">
-            <ul class="list-group" id="result">
+          <div class="container result-wrapper">
+            <ul class="list-group result-container" id="result">
             </ul><br>
           </div>
 
@@ -123,7 +123,7 @@
           </div>
           
             <!-- listings -->
-          <div class="container pt-1 pt-md-5">
+          <div class="container pt-1 pt-md-5 listing-wrapper">
             <ul class="list-group" id="listings">
             </ul><br>
           </div>

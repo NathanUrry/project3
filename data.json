@@ -64,4 +64,15 @@
     "location": "Staten Island",
     "description": "Old trumpet I found in the garage. ",
     "id": 6
+}, {
+    "name": "5 string banjo",
+    "email": "clive@hotmail.com",
+    "category": "string",
+    "brand": "McNeela",
+    "model": "Celt Tenor Banjo",
+    "condition": "Excellent",
+    "year": "2005",
+    "location": "Bronx",
+    "description": "Excellent condition banjo with a fantastic sound!",
+    "id": 7
 }]
