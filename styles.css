@@ -42,6 +42,14 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+.hero-container {
+    height: 80vh;
+    
+    
+   
+}
+
+
 .listing-background {
     position: relative;
     height: 100vh;
@@ -66,15 +74,7 @@ body {
     z-index: 1000;
 }
 
-.hero-text {
-    position: absolute;
-    display: inline-block;
-    max-width: 1200px;
-    min-width: 200px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);    
-}
+
 
 .main-text {
     font-size: 2rem;
@@ -95,6 +95,11 @@ body {
     
 }
 
+#listing-section {
+    overflow: hidden;
+}
+
+
 
 
 
@@ -102,27 +107,3 @@ body {
     display:none;
 }
 
-@media only screen and (min-width: 360px) {
-    .main-text {
-        font-size: 3rem;
-    }
-    .hero-text {
-        transform: translate(-50%, -60%);
-    }
-
-}
-@media only screen and (min-width: 500px) {
-    .main-text {
-        font-size: 4rem;
-    }
-}
-@media only screen and (min-width: 700px) {
-    .main-text {
-        font-size: 5rem;
-    }
-}
-@media only screen and (min-width: 900px) {
-    .main-text {
-        font-size: 6rem;
-    }
-}

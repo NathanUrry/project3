@@ -11,7 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- JQUERY AJAX -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
   <!-- BOOTSTRAP STYLESHEET -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -59,7 +60,10 @@
                     <a class="nav-link text-white" href="donate.php">Donate</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-white search-toggle" href="#">Search</a>
+                    <a class="nav-link text-white search-toggle" href="#">Quick Search</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="select.php">Explore</a>
                   </li>
               </ul>
             </div>
@@ -70,7 +74,7 @@
           <div class="container d-none search-container">
             <form class="form-group my-2 my-lg-0">
 
-              <input type="text" class="form-control " placeholder="Search Listings" name="search" id="search">
+              <input type="text" class="form-control " onfocus="this.value=''" value="Click here to clear" placeholder="Search Listings" name="search" id="search">
               
             </form>
             <div class="d-flex justify-content-end pt-md-3">
@@ -83,11 +87,20 @@
 
 
           <!-- HERO TEXT  -->
-          <div class="hero-text-containter ">
+          <div class="hero-container d-flex justify-content-center align-items-center">
+            <div>
+              <h1 class="text-white text-center display-4">Are Your Ready To Make A Difference?</h1>
+            </div>
+
+          </div>
+
+          
+
+           <!-- <div class="hero-text-containter ">
             <div class="hero-text">
               <h1 class="text-white main-text " id="hero-h1">Are you ready to make a difference?</h1>
             </div>
-          </div>
+          </div>  -->
 
           <!-- RESULTS -->
           <div class="container result-wrapper">
@@ -96,13 +109,13 @@
           </div>
 
           <!-- HERO BUTTONS -->
-          <div class="container pb-5 fixed-bottom ">
-            <div class="row justify-content-around pb-1 pb-md-5">
-              <div class="col-md-4 pb-3 pb-md-5">
+          <div class="container ">
+            <div class="row justify-content-around">
+              <div class="col-md-4 mt-0">
                 <a href="donate.php" class="btn btn-block btn-light py-3">Donate Now</a>
               </div>
-              <div class="col-md-4 pb-md-5">
-                <a href="#" class="btn btn-block btn-light py-3 search-toggle">Search Instruments</a>
+              <div class="col-md-4 mt-3 mt-md-0">
+                <a href="#" class="btn btn-block btn-light search-toggle py-3">Search Instruments</a>
 
               </div>
             </div>
@@ -130,13 +143,13 @@
         </div>
     </div>
     </section>
-    <section class="d-none" id="overflow">
+    <!-- <section class="d-none" id="overflow">
       <div class="overflow-background">
         <div class="background-overlay">
 
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 
 
@@ -170,7 +183,7 @@
       // toggle overflow
       $(".listing-section").toggleClass("d-none");
       $("#overflow").toggleClass("d-none");
-    });
+      $('#search').val() = '';    });
 
     });
 
@@ -232,6 +245,10 @@
       var click_text = $(this).text().split('|');
       $('#search').val($.trim(click_text[0]));
       $("#result").html('');
+
+
+      // javascript form select tutorial
+      
     });
   </script>
 
