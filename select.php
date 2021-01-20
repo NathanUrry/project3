@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Search Instruments</title>
+  <title>Music-ally | Search Instruments</title>
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
@@ -34,7 +34,8 @@
       color: rgba(255, 255, 255, 0.94);
     }
     .bg-success {
-        background: linear-gradient(120deg, rgba(0, 0, 0, 0.9),rgba(0,0,0, 0.8)) !important;
+         background: linear-gradient(120deg, rgba(0, 0, 0, 0.9),rgba(0,0,0, 0.8)) !important; 
+       
     }
     .bg-info {
         background-color: hsl(262, 36%, 35%) !important;
@@ -64,9 +65,7 @@
               <li class="nav-item">
                 <a class="nav-link text-white" href="donate.php">Donate</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white search-toggle" href="#">Search</a>
-              </li>
+              
           </ul>
         </div>
       </nav>
@@ -75,13 +74,14 @@
         <h2 class="text-center text-white display-4">Search Instruments</h2>
     </div>
 
-    <div class="container mt-5">
+      
+    <div class="container mt-5 mb-md-3">
         <div class="row ">
             <div class="col-md-6">
                 <div class="d-flex justify-content-center">
-                <form class="form-inline">
-                    <select class="form-control form-control-lg my-1 mr-sm-2" id="select1">
-                      <option selected disabled>Search By Category</option>
+                <form id="category-form" class="form-inline">
+                    <select id="selectVal1" class="form-control form-control-lg my-1 mr-sm-2" id="select1">
+                      <option value="category_select" selected disabled>Search By Category</option>
                       <option value="keyboard">Piano/ Keys</option>
                       <option value="woodwind">Woodwind</option>
                       <option value="brass">Brass</option>
@@ -93,15 +93,15 @@
                       <option value="media">Sheet Music / Books</option>
                       <option value="other">Other</option>
                     </select>
-                   <button type="submit" class="btn btn-primary btn-lg mx-auto  my-1">Submit</button>
+                   <button id="btn1" type="submit" class="btn btn-primary btn-lg mx-auto  my-1">Submit</button>
                   </form>
                   </div>
             </div>
 
             <div class="col-md-6">
                 <div class="d-flex justify-content-center ">
-                <form class="form-inline">
-                    <select class="form-control form-control-lg my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <form id="location-form" class="form-inline">
+                    <select id="selectVal2" class="form-control form-control-lg my-1 mr-sm-2" id="select2">
                         <option value=""selected disabled>Search By Location</option>
                         <option value="Manhattan">Manhattan</option>
                         <option value="Brooklyn">Brooklyn</option>
@@ -109,32 +109,17 @@
                         <option value="Bronx">Bronx</option>
                         <option value="Staten Island">Staten Island</option>
                     </select>
-                  
-                    
-                  
-                    <button type="submit" class="btn btn-primary btn-lg  my-1 mx-auto">Submit</button>
+                   <button value="submit" id="btn2" class="btn btn-primary btn-lg mx-auto  my-1">Submit</button> 
+
                   </form>
                   </div>
             </div>
-         
-            <!-- <div class="col-md-6 d-flex pt-2 justify-content-center">
-                <div>
-                    <form>
-                    <select class="form-control" name="" id="location">
-                    <option value=""selected disabled>Location</option>
-                    <option value="Manhattan">Manhattan</option>
-                    <option value="Queens">Queens</option>
-                    <option value="Bronx">Bronx</option>
-                    <option value="Brooklyn">Brooklyn</option>
-                    <option value="Staten Island">Staten Island</option>
-                    </select>
-                </div>  
-            </div> -->
+
          </div> 
            
     </div>
     <div class="container">
-        <div class="row " id="marketplace"></div>
+        <div class="row" id="marketplace"></div>
 
     </div>
 
@@ -146,52 +131,70 @@
 </script>
 
 <script>
+
+  // eloy jquery
+    $("#userName").keyup(function() {
+			var username = $("#userName").val();
+			$('#user').html(username);
+		});
+</script>
+
+<script>
     $(document).ready(function () {
-
-        
-
+     
+ // location form script
+ 
+ 
+      // marketplace display all (working)
     $.getJSON("data.json", function(data) {
     var html = '';
     $.each(data, function(key, value){
-       
-        // bootstrap card 1.0
-        // html += '<div class="card m-3 pb-0 bg-info text-white d-flex flex-column" style="width: 25rem;">';
-        // html += '<div>'    
-        // html += '<img src="img/'+value.id+'.jpg" class="card-img-top" style="max-height:" alt="...">';
-        // html += '</div>'  
-        // html += '<div class="card-body">';
-        // html += '<h4 class="card-title">'+value.name+'</h4>';
-        // html += '<p class="card-text text-info">Location: '+value.location+'</p>';
-        // html += '<p class="card-text">'+value.description+'</p>';
-        // html += '<p class="card-text">'+value.email+'</p>';
-        // html += '</div>';
-        // html += '<div class="mt-auto">';
-        // html += '<div class="text-center py-3"><a href="#" class="btn btn-outline-info py-3  btn-lg">Contact Donor</a></div>';
-        // html += '</div>'    
-        // html += '</div>';
 
-        // bootstrap card 2.0
-        html += `<div class="card m-3 pb-0 bg-info text-white d-flex flex-column" style="width: 25rem;">`;
-        html += `<div>`;    // beginning of trash
-        html += `<img src="img/${value.id}.jpg" class="card-img-top" style="max-height:" alt="...">`;
-        html += `</div>`  // more trash
-        html += `<div class="card-body my-auto">`;
-        html += `<h4 class="card-title">${value.name}</h4>`;
-        html += `<p class="card-text text-info">Location: ${value.location}</p>`;
-        html += `<h5 class="pb-3">Item Description:</h5>`;
-        html += `<p class="card-text">${value.description}</p>`;
-        html += `<p class="card-text">${value.email}</p>`;
-        html += `</div>`;
-        html += `<div class="mt-auto">`;
-        html += `<div class="text-center py-3"><a href="mailto:${value.email}" class="btn btn-outline-info py-3  btn-lg">Contact Donor</a></div>`;
-        html += `</div>`;    
-        html += `</div>`;
+        // bootstrap card 
+        html += `<div class="state ${value.category} ${value.location}">
+        <div id"${value.id}" class=" card m-3 pb-0 bg-info text-white d-flex flex-column" style="width: 25rem;">
+        <div>
+        <img src="img/${value.id}.jpg" class="card-img-top" style="max-height:" alt="...">
+        </div>
+        <div class="card-body my-auto">
+        <h4 class="card-title">${value.name}</h4>
+        <p class="card-text text-info">Location: ${value.location}</p>
+        <h5 class="pb-3">Item Description:</h5>
+        <p class="card-text">${value.description}</p>
+        <p class="card-text">${value.email}</p>
+        </div>
+        <div class="mt-auto">
+        <div class="text-center py-3"><a href="mailto:${value.email}" class="btn btn-outline-info py-3  btn-lg">Contact Donor</a></div>
+        </div>
+        </div>
+        </div>`;
     });
-$('#marketplace').html(html);
+$('#marketplace').append(html);
 });
 
-      
+    // submit filters
+
+    $('#category-form').submit(function(event){
+      event.preventDefault();
+      var input1 = $('#selectVal1').val();
+      console.log(input1);
+      $('.state').hide();
+      $('.' + input1).show();
+      console.log('.' + input1);
     });
+
+    $('#location-form').submit(function(event){
+      event.preventDefault();
+      var input2 = $('#selectVal2').val();
+      console.log(input2);
+      $('.state').hide();
+      $('.' + input2).show();
+      console.log('.' + input2);
+    });
+    
+});     
+
+    
   </script>
 </body>
 </html>

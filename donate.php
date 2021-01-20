@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Music-ally | Donate</title>
     <style>
       body {
         background: linear-gradient(45deg, #65dfc9, #6cdbeb);
       }
       .form-wrapper {
         height: 100vh ;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
       .form-body {
         border-radius:13px;
@@ -25,8 +22,8 @@
  
 
   
-    <div class="form-wrapper">
-    <div class="container bg-light p-5 form-body">
+    <div class="form-wrapper d-flex ">
+    <div class="container bg-light p-5 my-auto">
         <div>
           <!-- navbar 2.0 -->
     <nav class="navbar navbar-light bg-none pb-4">
