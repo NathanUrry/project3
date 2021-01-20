@@ -41,7 +41,6 @@
     <section id="hero">
       <div class="hero-background">
         <div class="background-overlay">
-
           <div class="container ">
             <!-- navbar -->
             <nav class="navbar navbar-expand-lg navbar-dark ">
@@ -60,54 +59,20 @@
                     <a class="nav-link text-white" href="donate.php">Donate</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-white search-toggle" href="#">Quick Search</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="select.php">Explore</a>
+                    <a class="nav-link text-white" href="marketplace.php">Explore</a>
                   </li>
               </ul>
             </div>
           </nav>
         </div>
-
-            <!-- SEARCH BAR -->
-          <div class="container d-none search-container">
-            <form class="form-group my-2 my-lg-0">
-
-              <input type="text" class="form-control " onfocus="this.value=''" value="Click here to clear" placeholder="Search Listings" name="search" id="search">
-              
-            </form>
-            <div class="d-flex justify-content-end pt-md-3">
-              <a href="#" class="search-close">
-                <span class="text-white ">X</span>
-              </a>
-              
-            </div>
-          </div>
-
-
+    
           <!-- HERO TEXT  -->
           <div class="hero-container d-flex justify-content-center align-items-center">
             <div>
               <h1 class="text-white text-center display-4">Are Your Ready To Make A Difference?</h1>
             </div>
-
           </div>
-
-          
-
-           <!-- <div class="hero-text-containter ">
-            <div class="hero-text">
-              <h1 class="text-white main-text " id="hero-h1">Are you ready to make a difference?</h1>
-            </div>
-          </div>  -->
-
-          <!-- RESULTS -->
-          <div class="container result-wrapper">
-            <ul class="list-group result-container" id="result">
-            </ul><br>
-          </div>
-
+                  
           <!-- HERO BUTTONS -->
           <div class="container ">
             <div class="row justify-content-around">
@@ -115,7 +80,7 @@
                 <a href="donate.php" class="btn btn-block btn-light py-3">Donate Now</a>
               </div>
               <div class="col-md-4 mt-3 mt-md-0">
-                <a href="#" class="btn btn-block btn-light search-toggle py-3">Search Instruments</a>
+                <a href="marketplace.php" class="btn btn-block btn-light search-toggle py-3">Search Instruments</a>
 
               </div>
             </div>
@@ -123,33 +88,6 @@
         </div>
       </div>
     </section>
-
-      <!-- LISTING SECTION -->
-    <section class="d-none listing-section" id="listing-section">
-    <div class="listing-background">
-        <div class="background-overlay">
-          <div class="container-fluid d-flex justify-content-end pt-md-3">
-            <a class="text-decoration-none" href="index.php">
-              <span class="text-white p-5 display-4">x</span>
-            </a>
-            
-          </div>
-          
-            <!-- listings -->
-          <div class="container pt-1 pt-md-5 listing-wrapper">
-            <ul class="list-group" id="listings">
-            </ul><br>
-          </div>
-        </div>
-    </div>
-    </section>
-    <!-- <section class="d-none" id="overflow">
-      <div class="overflow-background">
-        <div class="background-overlay">
-
-        </div>
-      </div>
-    </section> -->
   </div>
 
 
@@ -168,86 +106,6 @@
       $('h1').fadeIn(1000);
       $('nav').css('display', 'none');
       $('nav').fadeIn(1000);
-
-      $(".search-toggle").click(function(){
-      $(".search-container").toggleClass("d-none");
-      // toggle overflow
-      $(".listing-section").toggleClass("d-none");
-      $("#overflow").toggleClass("d-none");
-    });
-
-
-      // close search box
-      $(".search-close").click(function(){
-      $(".search-container").toggleClass("d-none");
-      // toggle overflow
-      $(".listing-section").toggleClass("d-none");
-      $("#overflow").toggleClass("d-none");
-      $('#search').val() = '';    });
-
-    });
-
-    // live search
-    $('#search').keyup(function (event) {
-      $.ajaxSetup({
-        cache: false
-      });
-      $('#result').html('');
-      $('#listings').html('');
-
-      if ($('#search').val() != "") var searchField = $('#search').val();
-      else var searchField = null;
-      var expression = new RegExp(searchField, "i");
-
-      // getJSON
-      $.getJSON('data.json', function (data) {
-        $.each(data, function (key, value) {
-          if (value.name.search(expression) != -1 || value.category.search(expression) != -1 || value.brand
-            .search(expression) != -1 || value.model.search(expression) != -1 || value.condition.search(
-              expression) != -1 || value.year.search(expression) != -1 || value.location.search(
-            expression) != -1) {
-              // display search items
-            $('#result').append(
-              ` <li class="list-group-item link-class">
-                  <img src="img/${value.id}.jpg" style="height:40px;width:40px;" class="img-thumbnail" /> 
-                  ${value.name} | <span class="text-muted"> ${value.location} </span>
-                  <a href="#listings" class="btn btn-light btn-sm ml-3 listing-btn">View Listing</a>
-                </li>
-            `);
-            $('#listings').append(
-           
-                `
-                  <li class="list-group-item">
-                    <div class="row">
-                      <div class="col">
-                        <div class="card">
-                          <div class="card-header">
-                            <h5 class="card-title"> <a href="img/${value.id}.jpg" target="_blank"><img class="" src="img/${value.id}.jpg" style="height:100px;width:100px;" class="img-thumbnail" /></a> ${value.name}</h5> 
-                            </div
-                          <div class="card-body px-3">
-                            
-                            <p class="card-text text-center text-muted">Brand: ${value.brand} &emsp; Model: ${value.model} &emsp; Year: ${value.year} &emsp; Location: ${value.location}</p>
-                            <p class="card-text">&emsp; ${value.description}</p>
-                            <p class="card-text text-muted">Contact Email: ${value.email}</p>
-                            <a href="mailto:${value.email}" class="btn btn-light">Contact Now</a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                `);
-          } 
-        });
-
-      });
-    });
-    // close search suggestion on click
-    $('#result').on('click', 'li', function () {
-      var click_text = $(this).text().split('|');
-      $('#search').val($.trim(click_text[0]));
-      $("#result").html('');
-
-
-            
     });
   </script>
 
