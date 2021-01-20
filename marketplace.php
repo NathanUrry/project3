@@ -41,8 +41,22 @@
         background-color: hsl(262, 36%, 35%) !important;
     }
 
+    .btn-info {
+      background-color: rgba(255, 255, 255, 0.94) !important;
+      border-color: rgba(255, 255, 255, 0.94) !important;
+      color: black !important;
+    }
+
+    .btn-info:hover {
+      background-color: #9e86ff !important;
+      border-color: #9e86ff !important;
+      color: rgba(255, 255, 255, 0.94) !important;
+    }
+
     #marketplace {
-        justify-content: center;
+        justify-content: center; 
+        color: #9e86ff;
+
     }
     
   </style>
@@ -93,7 +107,7 @@
                       <option value="media">Sheet Music / Books</option>
                       <option value="other">Other</option>
                     </select>
-                   <button id="btn1" type="submit" class="btn btn-primary btn-lg mx-auto  my-1">Submit</button>
+                   <button id="btn1" type="submit" class="btn btn-light btn-lg mx-auto  my-1">Submit</button>
                   </form>
                   </div>
             </div>
@@ -109,7 +123,7 @@
                         <option value="Bronx">Bronx</option>
                         <option value="Staten Island">Staten Island</option>
                     </select>
-                   <button value="submit" id="btn2" class="btn btn-primary btn-lg mx-auto  my-1">Submit</button> 
+                   <button value="submit" id="btn2" class="btn btn-light btn-lg mx-auto  my-1">Submit</button> 
 
                   </form>
                   </div>
@@ -164,7 +178,7 @@
         <p class="card-text">${value.email}</p>
         </div>
         <div class="mt-auto">
-        <div class="text-center py-3"><a href="mailto:${value.email}" class="btn btn-outline-info py-3  btn-lg">Contact Donor</a></div>
+        <div class="text-center py-3"><a href="mailto:${value.email}" class="btn btn-info py-3  btn-lg">Contact Donor</a></div>
         </div>
         </div>
         </div>`;
