@@ -47,68 +47,10 @@ body {
 }
 
 
-.listing-background {
-    position: relative;
-    height: 100vh;
-    background-image: url('designImg/streetsaxXL.jpg');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
-.listing-wrapper {
-    max-height: 100vh;
-}
-.overflow-background {
-    position: relative;
-    height: 100vh;
-    background-image: url('designImg/jazzmuralXL.jpg');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
-
-#listings {
-    z-index: 1000;
-}
-
-
-
-.main-text {
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 1.2;
-}
-
-/* .btn-container {
-    
-    
-} */
-
-
-
-#search {
-  max-width: 1100px;
-  margin: 0 auto;  
-    
-}
-
-#listing-section {
-    overflow: hidden;
-}
-
-
-
-
-
 .hidden {
     display:none;
 }
 
-/* #hero-text-h1 {
-    font-size: 6rem !important;
-    font-weight: 300 !important;
-    line-height: 1.2 !important;
-} */
 
 #subtitle {
     font-size: 1.5rem;

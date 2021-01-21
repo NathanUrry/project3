@@ -159,11 +159,7 @@
           <!-- HERO BUTTONS -->
           <div class="container ">
             <div class="row d-flex justify-content-center">
-              <!-- <div class="col d-none d-md-block text-center">
-                <a href="donate.php" class="btn btn-lg btn-light mr-3 py-3">Donate Now</a>
-                <a href="marketplace.php" class="btn btn-lg btn-info search-toggle py-3">Search Instruments</a>
-
-              </div> -->
+            
                <div class="col-md-4 mt-0 d-md-none">
                 <a href="donate.php" class="btn btn-block btn-light py-3">Donate Now</a>
               </div>

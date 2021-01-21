@@ -84,6 +84,8 @@
         </div>
       </nav>
     </div>
+
+     <!-- H2 -->
     <div class="container mt-3">
         <h2 class="text-center text-white display-4">Search Instruments</h2>
     </div>
@@ -91,6 +93,8 @@
       
     <div class="container mt-5 mb-md-3">
         <div class="row ">
+          
+            <!-- Category Dropdown -->
             <div class="col-md-6">
                 <div class="d-flex justify-content-center">
                 <form id="category-form" class="form-inline">
@@ -112,6 +116,7 @@
                   </div>
             </div>
 
+            <!-- Location Dropdown -->
             <div class="col-md-6">
                 <div class="d-flex justify-content-center ">
                 <form id="location-form" class="form-inline">
@@ -132,6 +137,8 @@
          </div> 
            
     </div>
+
+    <!-- Instrument Marketplace -->
     <div class="container">
         <div class="row" id="marketplace"></div>
 
@@ -144,22 +151,11 @@
   integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
 </script>
 
-<script>
-
-  // eloy jquery
-    $("#userName").keyup(function() {
-			var username = $("#userName").val();
-			$('#user').html(username);
-		});
-</script>
 
 <script>
     $(document).ready(function () {
-     
- // location form script
- 
- 
-      // marketplace display all (working)
+      
+      // marketplace display all function
     $.getJSON("data.json", function(data) {
     var html = '';
     $.each(data, function(key, value){
